@@ -1,0 +1,12 @@
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\bin\Debug\netcoreapp3.1\DLL.deps.json
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\bin\Debug\netcoreapp3.1\DLL.runtimeconfig.json
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\bin\Debug\netcoreapp3.1\DLL.runtimeconfig.dev.json
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\bin\Debug\netcoreapp3.1\DLL.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\bin\Debug\netcoreapp3.1\DLL.pdb
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.csprojAssemblyReference.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.csproj.CoreCompileInputs.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.AssemblyInfoInputs.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.AssemblyInfo.cs
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.pdb
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\DLL\obj\Debug\netcoreapp3.1\DLL.genruntimeconfig.cache

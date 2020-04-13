@@ -1,0 +1,14 @@
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\DLL.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\Utility.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\DLL.pdb
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\bin\Debug\netcoreapp3.1\Utility.pdb
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
