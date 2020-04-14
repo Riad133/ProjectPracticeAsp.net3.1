@@ -57,6 +57,9 @@
           <e p="IStudentService.cs" t="Include" />
           <e p="ITestService.cs" t="Include" />
         </e>
+        <e p="ViewModel" t="Include">
+          <e p="CustomClaimName.cs" t="Include" />
+        </e>
       </e>
       <e p="DLL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -68,6 +71,8 @@
         <e p="Migrations" t="Include">
           <e p="20200411155638_InitialMigration1.cs" t="Include" />
           <e p="20200411155638_InitialMigration1.Designer.cs" t="Include" />
+          <e p="20200413145304_AddDepartmentToStudent.cs" t="Include" />
+          <e p="20200413145304_AddDepartmentToStudent.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">

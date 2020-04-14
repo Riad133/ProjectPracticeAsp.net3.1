@@ -35,8 +35,10 @@ namespace API.Controllers
         
         [HttpGet("test2")]
         [Authorize]
-        public ActionResult Test2()
+        public async  Task<ActionResult> Test2()
         {
+            var user = User;
+             await  _accountService.Test(user);
             return Ok("Test2");
         }
 

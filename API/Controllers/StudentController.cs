@@ -6,6 +6,7 @@ using BLL.Request;
 using BLL.Services;
 using DLL.Model;
 using DLL.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -23,6 +24,7 @@ namespace API.Controllers
         }
         // GET
         [HttpGet]
+        [Authorize(Roles = "teacher")]
         public async  Task<ActionResult> GetAll()
         {
            
@@ -30,6 +32,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "teacher")]
         [Route("{rollNo}")]
         public async Task<ActionResult>GetSingleStudent(string rollNo)
         {
@@ -37,11 +40,14 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "teacher")]
+       
         public async  Task<ActionResult> InsertStudent(StudentInsertRequest aStudent)
         {
             return Ok(await _studentService.AddStudentAsync(aStudent));
         }
        [HttpPut("{rollNo}")]
+       [Authorize(Roles = "staff")]
         
         public async  Task<ActionResult>UpdateStudent(string rollNo,StudentUpdateRequest aStudent)
         {

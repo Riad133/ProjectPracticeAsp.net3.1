@@ -16,6 +16,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
+            var user = User;
             await _testService.SaveData();
             return Ok("Hello");
         }

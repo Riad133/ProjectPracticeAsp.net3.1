@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using DLL.Model.Interfaces;
 
 namespace DLL.Model
@@ -9,9 +10,12 @@ namespace DLL.Model
         public string Name { get; set; }
         public string Email { get; set; }
         public string RollNo { get; set; }
+        public int DepartmentId { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
         public string CreatedBy { get; set; }
         public DateTimeOffset UpdatedAt { get; set; }
         public string UpdatedBy { get; set; }
+        [ForeignKey("DepartmentId")]
+        public Department Department { get; set; }
     }
 }

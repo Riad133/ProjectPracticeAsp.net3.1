@@ -63,7 +63,13 @@ namespace API
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             // JWT SetUp
             JwTConfigatration(services);
+            
             // JWT SetUp End
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("FirstStepCompleted", policy => policy.RequireClaim("FirstStepCompleted"));
+                o.AddPolicy("Authorized", policy => policy.RequireClaim("Authorized"));
+            });
 
 
         }
@@ -117,10 +123,12 @@ namespace API
             });
             //this part end for API documentation 
             app.UseHttpsRedirection();
+            
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
