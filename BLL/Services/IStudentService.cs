@@ -55,7 +55,9 @@ namespace BLL.Services
             {
                 Name = astudent.Name,
                 Email = astudent.Email,
-                RollNo = astudent.RollNo
+                RollNo = astudent.RollNo,
+                DepartmentId = astudent.DepartmentId
+                
             };
              await _unitOfWork.StudentRepository.createAsync(student);
              if (!await _unitOfWork.ApplicationSaveChangesAsync())
@@ -104,7 +106,9 @@ namespace BLL.Services
             {
                 Name = request.Name,
                 Email = request.Email,
-                RollNo = request.RollNo
+                RollNo = request.RollNo,
+                DepartmentId = request.DepartmentId
+                
             };
             
             _unitOfWork.StudentRepository.UpdateAsync(student);

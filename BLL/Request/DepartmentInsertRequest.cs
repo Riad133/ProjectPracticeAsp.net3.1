@@ -34,7 +34,7 @@ namespace BLL.Request
             }
 
             var departmentService = _serviceProvider.GetRequiredService<IDepartmentService>();
-            return !await departmentService.IsCodeExists(code);
+            return await departmentService.IsCodeExists(code);
         }
 
         private async Task<bool> NameExist(string name, CancellationToken arg2)
@@ -45,7 +45,7 @@ namespace BLL.Request
             }
 
             var departmentService = _serviceProvider.GetRequiredService<IDepartmentService>();
-            return !await departmentService.IsNameExists(name);
+            return await departmentService.IsNameExists(name);
         }
     }
 }

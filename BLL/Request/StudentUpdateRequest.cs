@@ -13,6 +13,7 @@ namespace BLL.Request
         public string Name { get; set; }
         public string RollNo { get; set; }
         public string Email { get; set; }
+        public int DepartmentId { get; set; }
     }
 
     public class StudentUpdateRequestValidator : AbstractValidator<StudentUpdateRequest>
