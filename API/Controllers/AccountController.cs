@@ -28,18 +28,27 @@ namespace API.Controllers
             return Ok(await _accountService.LoginUser(request));
         }
       [HttpGet("test1")]
+      [Authorize(Policy = "AtToken")]
         public ActionResult Test1()
         {
             return Ok("Test1");
         }
         
         [HttpGet("test2")]
-        [Authorize]
-        public async  Task<ActionResult> Test2()
+        
+        [Authorize(Roles = "customer", Policy = "AtToken")]
+        
+        public   ActionResult Test2()
         {
-            var user = User;
-             await  _accountService.Test(user);
+          
+           
             return Ok("Test2");
+        }
+        [HttpPost("logout")]
+        public async Task<ActionResult> LoginOut()
+        {
+            var tt = User;
+            return Ok(await _accountService.LogOutUser(tt));
         }
 
     }

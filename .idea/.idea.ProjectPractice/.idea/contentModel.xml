@@ -16,6 +16,12 @@
           <e p="StudentController.cs" t="Include" />
           <e p="TestController.cs" t="Include" />
         </e>
+        <e p="Keys" t="Include">
+          <e p="v1" t="Include">
+            <e p="privatekey.pem" t="Include" />
+            <e p="publickey.pem" t="Include" />
+          </e>
+        </e>
         <e p="Middleware" t="Include">
           <e p="ExceptionMiddleware.cs" t="Include" />
         </e>
@@ -25,6 +31,10 @@
               <e p="API.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Policy" t="Include">
+          <e p="TokenPolicy.cs" t="Include" />
+          <e p="TokenPolicyHandler.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -50,7 +60,10 @@
           <e p="StudentInsertRequest.cs" t="Include" />
           <e p="StudentUpdateRequest.cs" t="Include" />
         </e>
-        <e p="Response" t="Include" />
+        <e p="Response" t="Include">
+          <e p="LoginResponse.cs" t="Include" />
+          <e p="RefreshTokenResponse.cs" t="Include" />
+        </e>
         <e p="Services" t="Include">
           <e p="IAccountService.cs" t="Include" />
           <e p="IDepartmentService.cs" t="Include" />
@@ -111,6 +124,10 @@
         </e>
         <e p="Helper" t="Include">
           <e p="ErrorResponse.cs" t="Include" />
+          <e p="TaposRSA.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="SuccessResponse.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -120,6 +137,7 @@
           </e>
         </e>
         <e p="Utility.csproj" t="IncludeRecursive" />
+        <e p="UtilityDependency.cs" t="Include" />
       </e>
     </e>
   </component>

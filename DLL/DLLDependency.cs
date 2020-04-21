@@ -9,6 +9,7 @@ namespace DLL
         public static void ALLDependency(IServiceCollection services)
         {
             services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
+           
         }
     }
 }

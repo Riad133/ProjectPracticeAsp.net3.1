@@ -60,6 +60,11 @@ namespace API.Middleware
                     break;
                     
                 }
+                case UnauthorizedAccessException unauthorizedAccessException:
+                    error.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    error.Message = "You are not authorized";
+                    break;
+
                 default:
                 {
                     break;

@@ -81,3 +81,10 @@ F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\DerConverter.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\PemUtils.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
