@@ -17,26 +17,28 @@ namespace API.Policy
         }
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, TokenPolicy requirement)
         {
-            var userid = context.User.Claims.FirstOrDefault(x => x.Type == "userid");
-            if (userid == null)
+            var userId = context.User.Claims.FirstOrDefault(x => x.Type == "userid")?.Value;
+            if (userId == null)
             {
-                throw  new UnauthorizedAccessException();
+                throw new UnauthorizedAccessException();
             }
 
-            var accessTokenKey = userid.ToString() + "_accesstoken";
-          
 
+            var accessTokenKey = userId + "_acesstoken";
             var cacheToken = _cache.GetString(accessTokenKey);
-       
+
             if (cacheToken == null)
             {
-                throw  new UnauthorizedAccessException();
+                throw new UnauthorizedAccessException();
             }
             else
             {
-                 context.Succeed(requirement);
+                context.Succeed(requirement);
             }
-            return  Task.CompletedTask;
+
+            return Task.CompletedTask;
+
         }
+    
     }
 }

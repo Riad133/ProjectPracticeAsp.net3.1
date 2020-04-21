@@ -27,6 +27,7 @@ namespace BLL.Services
         Task Test(ClaimsPrincipal tt);
 
         Task<SuccessResponse> LogOutUser(ClaimsPrincipal tt);
+        Task<LoginResponse> RefreshToken(string refreshToken);
     }
 
     public class AccountService : IAccountService
@@ -72,18 +73,19 @@ namespace BLL.Services
 
         public async Task<SuccessResponse> LogOutUser(ClaimsPrincipal tt)
         {
-            var userId = tt.FindFirst(x => x.Type == "userid")?.Value;
-            var accessTokenKey = userId.ToString() + "_accesstoken";
-            var refreshTokenKey = userId.ToString() + "_refreshtoken";
+            var userId = tt.FindFirst(c => c.Type == "userid")?.Value;
 
+            var accessTokenKey = userId + "_acesstoken";
+            var refreshTokenKey = userId + "_refreshtoken";
 
             await _cache.RemoveAsync(accessTokenKey);
             await _cache.RemoveAsync(refreshTokenKey);
-            return  new SuccessResponse
-             {
-                 Message = "Logout Successfully",
-                 statusCode = 200
-             };
+
+            return new SuccessResponse()
+            {
+                Message = "lgoout sucessfully",
+                statusCode = 200
+            };
 
         }
 
@@ -127,16 +129,43 @@ namespace BLL.Services
         }
         private async Task StoreTokenInformation(long userId, string accessToken, string refreshToken)
         {
-           
-                    var accessTokenOptions = new DistributedCacheEntryOptions()
-                        .SetSlidingExpiration(TimeSpan.FromMinutes(_configuration.GetValue<int>("Jwt:AccessTokenLifeTime")));
-                    var RefreshTokenOptions = new DistributedCacheEntryOptions()
-                        .SetSlidingExpiration(TimeSpan.FromMinutes(_configuration.GetValue<int>("Jwt:RefreshTokenLifeTime")));
-                    var accessTokenKey = userId.ToString() + "_accesstoken";
-                    var refreshTokenKey = userId.ToString() + "_refreshtoken";
 
-                    await _cache.SetStringAsync(accessTokenKey, accessToken, accessTokenOptions);
-                    await _cache.SetStringAsync(refreshTokenKey, refreshToken, RefreshTokenOptions);
+            var accessTokenOptions = new DistributedCacheEntryOptions()
+          .SetSlidingExpiration(TimeSpan.FromMinutes(_configuration.GetValue<int>("Jwt:AccessTokenLifeTime")));
+
+            var refreshTokenOptions = new DistributedCacheEntryOptions()
+                .SetSlidingExpiration(TimeSpan.FromMinutes(_configuration.GetValue<int>("Jwt:RefreshTokenLifeTime")));
+
+            var accessTokenKey = userId.ToString() + "_acesstoken";
+            var refreshTokenKey = userId.ToString() + "_refreshtoken";
+
+            await _cache.SetStringAsync(accessTokenKey, accessToken, accessTokenOptions);
+            await _cache.SetStringAsync(refreshTokenKey, refreshToken, refreshTokenOptions);
+
+        }
+
+        public async Task<LoginResponse> RefreshToken(string refreshToken)
+        {
+            var decryptRsa = _taposRsa.Decrypt(refreshToken, "v1");
+            if (decryptRsa == null)
+            {
+                throw new MyAppException("Refresh Token not found");
+            }
+            var refreshtokenObject = JsonConvert.DeserializeObject<RefreshTokenResponse>(decryptRsa);
+            var refreshTokenKey = refreshtokenObject.UserId.ToString() + "_refreshtoken";
+            var cacheData = await _cache.GetStringAsync(refreshTokenKey);
+
+            if (cacheData == null)
+            {
+                throw new MyAppException("Refresh Token not found");
+            }
+
+            if (cacheData != refreshToken)
+            {
+                throw new MyAppException("Refresh Token not found");
+            }
+            var user = await _userManager.FindByIdAsync(refreshtokenObject.UserId.ToString());
+            return await GenerateJSONWebToken(user);
 
         }
     }

@@ -50,6 +50,12 @@ namespace API.Controllers
             var tt = User;
             return Ok(await _accountService.LogOutUser(tt));
         }
+        [HttpPost("refresh")]
+        public async Task<ActionResult> RefreshToken(string refreshToken)
+        {
+            
+            return Ok(await _accountService.RefreshToken(refreshToken));
+        }
 
     }
 }
