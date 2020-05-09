@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Request;
+using BLL.Response;
 using DLL.DbContext;
 using DLL.Model;
 using DLL.Repository;
@@ -20,6 +21,7 @@ namespace BLL.Services
         Task<Student> GetAStudentAsync(string rollNo);
         Task<bool> IsRollNoExists(string rollNo);
          Task<Student> UpdateStudentAsync(string rollNo,StudentUpdateRequest aStudent);
+         Task<List<StudentReport>> GetAllStudentDepartmentReportAsync();
     }
 
     public class StudentService:IStudentService
@@ -70,7 +72,13 @@ namespace BLL.Services
 
         public async Task<List<Student>> GetAllStudentAsync()
         {
-            return await _unitOfWork.StudentRepository.GetListAsync();
+            var allStudent = await _unitOfWork.StudentRepository.GetListAsync();
+
+            if (allStudent == null)
+            {
+                throw  new MyAppException("No Data Found.");
+            }
+            return allStudent;
         }
 
         public async  Task<Student> GetAStudentAsync(string rollNo)
@@ -100,7 +108,7 @@ namespace BLL.Services
             var astudent = await _unitOfWork.StudentRepository.GetAAsync(x => x.RollNo== rollNo);
             if (astudent == null)
             {
-                throw new Exception(); 
+                throw  new MyAppException("No data found");
             }
             Student student = new Student
             {
@@ -118,6 +126,29 @@ namespace BLL.Services
               }
 
               return student;
+        }
+
+        public async Task<List<StudentReport>> GetAllStudentDepartmentReportAsync()
+        {
+            var allStudent =  _unitOfWork.StudentRepository.QueryAll().Include(x => x.Department).ToList();
+
+            if (allStudent == null)
+            {
+                throw  new MyAppException("No Data Found.");
+            }
+
+            var studentsReports =new  List<StudentReport>();
+            foreach (var student in allStudent)
+            {
+                studentsReports.Add(new StudentReport
+                {
+                    StudentName = student.Name,
+                    StudentEmail = student.Email,
+                    DepartmentCode = student.Department.Code,
+                    DepartmentName = student.Department.Name
+                });
+            }
+            return studentsReports;
         }
     }
 }

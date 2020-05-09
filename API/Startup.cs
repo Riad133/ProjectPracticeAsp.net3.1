@@ -58,8 +58,8 @@ namespace API
             });
           
             //this part end for API documentation 
-            services.AddControllers().AddFluentValidation().AddNewtonsoftJson();
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(services.AddControllers().AddFluentValidation().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                                                                    options =>
                 options.UseSqlServer(Configuration.GetConnectionString("myDbConnection")));
             GetAllDependency(services);
             services.AddIdentity<AppUser, AppRole>(options => options.SignIn.RequireConfirmedAccount = true)

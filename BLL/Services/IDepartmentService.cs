@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BLL.Request;
 using DLL.Model;
 using DLL.Repository;
 using DLL.UnitOfWork;
+using Microsoft.EntityFrameworkCore;
 using Utility.Exceptions;
 
 namespace BLL.Services
@@ -16,9 +18,11 @@ namespace BLL.Services
         Task<Department> GetADepartmentAsync(string code);
         Task<Department> UpdateAsync(string code, DepartmentInsertRequest request);
         Task<bool> DeleteAsync(string code);
-
+                                                  
         Task<bool> IsCodeExists(string code);
         Task<bool> IsNameExists(string name);
+        Task<bool> IsDepartmentIdExists(int id);  
+        
     }
 
     public class DepartmentService : IDepartmentService
@@ -48,9 +52,9 @@ namespace BLL.Services
            
         }
 
-        public Task<List<Department>> GetAllDepartmentAsync()
+        public async Task<List<Department>> GetAllDepartmentAsync()
         {
-            var departments = _unitOfWork.DepartmentRepository.GetListAsync();
+            var departments =  _unitOfWork.DepartmentRepository.QueryAll().Include(x => x.Students).ToList();
             if (departments == null)
             {
                 throw new MyAppException("Department not found");
@@ -61,7 +65,7 @@ namespace BLL.Services
 
         public async Task<Department> GetADepartmentAsync(string code)
         {
-            var department = await _unitOfWork.DepartmentRepository.GetAAsync(x => x.Code == code);
+            var department =  _unitOfWork.DepartmentRepository.QueryAll().Where(x => x.Code==code).Include(x => x.Students).FirstOrDefault();
             if (department == null)
             {
                 throw new MyAppException("Department not found");
@@ -112,6 +116,15 @@ namespace BLL.Services
         public async Task<bool> IsCodeExists(string code)
         {
             var department  = await _unitOfWork.DepartmentRepository.GetAAsync(x => x.Code == code);
+            if (department != null)
+            {
+                return true;
+            }
+            return true;
+        }
+        public async Task<bool> IsDepartmentIdExists(int id)
+        {
+            var department  = await _unitOfWork.DepartmentRepository.GetAAsync(x => x.DepartmentId == id);
             if (department != null)
             {
                 return true;

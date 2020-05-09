@@ -83,7 +83,7 @@ namespace BLL.Services
 
             return new SuccessResponse()
             {
-                Message = "lgoout sucessfully",
+                Message = "logout successfully",
                 statusCode = 200
             };
 

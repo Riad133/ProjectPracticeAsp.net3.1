@@ -17,7 +17,7 @@ namespace API.Controllers
         }
         // GET
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             //var user = User;
           //  await _testService.SaveData();

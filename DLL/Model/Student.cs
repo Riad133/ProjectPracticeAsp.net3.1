@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using DLL.Model.Interfaces;
 
 namespace DLL.Model
@@ -16,6 +18,9 @@ namespace DLL.Model
         public DateTimeOffset UpdatedAt { get; set; }
         public string UpdatedBy { get; set; }
         [ForeignKey("DepartmentId")]
+       
         public Department Department { get; set; }
+
+        public ICollection<CourseStudent> CourseStudents { get; set; }
     }
 }

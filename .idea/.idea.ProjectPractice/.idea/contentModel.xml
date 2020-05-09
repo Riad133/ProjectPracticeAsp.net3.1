@@ -11,9 +11,12 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
+          <e p="CourseController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="OurApplicationController.cs" t="Include" />
           <e p="StudentController.cs" t="Include" />
+          <e p="StudentCourseEnrollController.cs" t="Include" />
+          <e p="StudentDepartmentController.cs" t="Include" />
           <e p="TestController.cs" t="Include" />
         </e>
         <e p="Keys" t="Include">
@@ -55,6 +58,7 @@
           </e>
         </e>
         <e p="Request" t="Include">
+          <e p="CourseInsertRequest.cs" t="Include" />
           <e p="DepartmentInsertRequest.cs" t="Include" />
           <e p="LoginRequest.cs" t="Include" />
           <e p="StudentInsertRequest.cs" t="Include" />
@@ -63,9 +67,11 @@
         <e p="Response" t="Include">
           <e p="LoginResponse.cs" t="Include" />
           <e p="RefreshTokenResponse.cs" t="Include" />
+          <e p="StudentReport.cs" t="Include" />
         </e>
         <e p="Services" t="Include">
           <e p="IAccountService.cs" t="Include" />
+          <e p="ICourseService.cs" t="Include" />
           <e p="IDepartmentService.cs" t="Include" />
           <e p="IStudentService.cs" t="Include" />
           <e p="ITestService.cs" t="Include" />
@@ -82,16 +88,16 @@
         <e p="DLL.csproj" t="IncludeRecursive" />
         <e p="DLLDependency.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200411155638_InitialMigration1.cs" t="Include" />
-          <e p="20200411155638_InitialMigration1.Designer.cs" t="Include" />
-          <e p="20200413145304_AddDepartmentToStudent.cs" t="Include" />
-          <e p="20200413145304_AddDepartmentToStudent.Designer.cs" t="Include" />
+          <e p="20200508200535_removeDepartmentStudentClss.cs" t="Include" />
+          <e p="20200508200535_removeDepartmentStudentClss.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="AppRole.cs" t="Include" />
           <e p="AppUser.cs" t="Include" />
           <e p="AppUserRole.cs" t="Include" />
+          <e p="Course.cs" t="Include" />
+          <e p="CourseStudent.cs" t="Include" />
           <e p="Department.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="IsoftDelete.cs" t="Include" />
@@ -107,6 +113,7 @@
           </e>
         </e>
         <e p="Repository" t="Include">
+          <e p="ICourseRepository.cs" t="Include" />
           <e p="IDepartmentRepository.cs" t="Include" />
           <e p="IStudentRepository.cs" t="Include" />
         </e>

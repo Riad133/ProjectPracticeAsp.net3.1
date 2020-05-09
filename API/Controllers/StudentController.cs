@@ -30,6 +30,7 @@ namespace API.Controllers
            
             return Ok(await  _studentService.GetAllStudentAsync());
         }
+       
 
         [HttpGet]
         [Authorize(Roles = "teacher")]

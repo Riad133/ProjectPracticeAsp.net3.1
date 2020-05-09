@@ -15,7 +15,7 @@ namespace DLL.UnitOfWork
         void DeleteAsync(T entry);
         Task<T> GetAAsync(Expression<Func<T, bool>> expression = null);
         Task<List<T>>  GetListAsync(Expression<Func<T,bool>> expression=null);
-       
+        IQueryable<T> QueryAll(Expression<Func<T, bool>> expression = null);
 
     }
 
@@ -57,6 +57,13 @@ namespace DLL.UnitOfWork
             return await _context.Set<T>().Where(expression).ToListAsync();
         }
 
-       
+        public  IQueryable<T> QueryAll(Expression<Func<T, bool>> expression = null)
+        {
+            if (expression == null)
+            {
+                return  _context.Set<T>().AsQueryable().AsNoTracking();
+            }
+            return  _context.Set<T>().Where(expression).AsQueryable().AsNoTracking();
+        }
     }
 }

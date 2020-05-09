@@ -27,6 +27,7 @@ namespace BLL.Request
             RuleFor(x => x.Name).NotEmpty().NotNull();
             RuleFor(x => x.Email).NotEmpty().NotNull().MustAsync(EmailExists).WithMessage("email already exists");
             RuleFor(x => x.RollNo).NotEmpty().NotNull().MustAsync(RollNoExists).WithMessage("rollNo already exists");
+            RuleFor(x => x.DepartmentId).NotEmpty().NotNull().MustAsync(DepartmentIdNoExists).WithMessage("Department Not exist");
         }
 
         private async Task<bool> EmailExists(string email, CancellationToken arg2)
@@ -48,6 +49,16 @@ namespace BLL.Request
 
             var StudentServiceProvider = _serviceProvider.GetRequiredService<IStudentService>();
             return !await StudentServiceProvider.IsRollNoExists(rollNo);
+        }
+        private async Task<bool> DepartmentIdNoExists(int DepartmentId, CancellationToken arg2)
+        {
+            if (DepartmentId  == null  )
+            {
+                return false;
+            }
+
+            var departmentService = _serviceProvider.GetRequiredService<IDepartmentService>();
+            return await departmentService.IsDepartmentIdExists(DepartmentId);
         }
     }
 }

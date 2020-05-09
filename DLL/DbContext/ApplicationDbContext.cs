@@ -24,6 +24,9 @@ namespace DLL.DbContext
         private static readonly MethodInfo _propertyMethod = typeof(EF).GetMethod(nameof(EF.Property), BindingFlags.Static | BindingFlags.Public).MakeGenericMethod(typeof(bool));
         public DbSet<Student> Students { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseStudent> CourseStudents { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
@@ -34,6 +37,16 @@ namespace DLL.DbContext
                     modelBuilder.Entity(entity.ClrType).HasQueryFilter(GetIsDeletedRestriction(entity.ClrType));
                 }
             }
+            modelBuilder.Entity<CourseStudent>()
+                .HasKey(cs => new { cs.courseId, cs.studentId });  
+            modelBuilder.Entity<CourseStudent>()
+                .HasOne(bc => bc.Course)
+                .WithMany(b => b.CourseStudents)
+                .HasForeignKey(bc => bc.courseId);  
+            modelBuilder.Entity<CourseStudent>()
+                .HasOne(bc => bc.Student)
+                .WithMany(c => c.CourseStudents)
+                .HasForeignKey(bc => bc.studentId);
             base.OnModelCreating(modelBuilder);
         }
         private static LambdaExpression GetIsDeletedRestriction(Type type)
