@@ -56,11 +56,12 @@ namespace API
                 // If the client hasn't specified the API version in the request, use the default API version number 
                 config.AssumeDefaultVersionWhenUnspecified = true;
             });
-          
-            //this part end for API documentation 
-            services.AddDbContext<ApplicationDbContext>(services.AddControllers().AddFluentValidation().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-                                                                    options =>
+            services.AddControllers().AddFluentValidation().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("myDbConnection")));
+            GetAllDependency(services);
+            //this part end for API documentation 
+           
             GetAllDependency(services);
             services.AddIdentity<AppUser, AppRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

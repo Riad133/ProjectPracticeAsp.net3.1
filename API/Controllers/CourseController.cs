@@ -20,20 +20,20 @@ namespace API.Controllers
             return Ok(await _courseService.AddCourseAsync(course));
         }
         [HttpGet]
-        public async  Task<ActionResult>GetAllDepartment()
+        public async  Task<ActionResult>GetAllCourses()
         {
             return Ok(await _courseService.GetAllCourseAsync());
         }
         [HttpGet]
         [Route("code")]
-        public async  Task<ActionResult>GetDepartment(string code)
+        public async  Task<ActionResult>GetCourse(string code)
         {
             return Ok(await _courseService.GetACourseAsync(code));
         }
         [HttpPut("{code}")]
         
         
-        public async  Task<ActionResult>UpdateStudent(string code,CourseInsertRequest request)
+        public async  Task<ActionResult>UpdateCourse(string code,CourseInsertRequest request)
         {
             return Ok(await _courseService.UpdateAsync(code,request));
         } 

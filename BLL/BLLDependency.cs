@@ -30,6 +30,7 @@ namespace BLL
             services.AddTransient<IValidator<DepartmentInsertRequest>, DepartmentInsertRequestValidator>();
             services.AddTransient<IValidator<StudentInsertRequest>,StudentInsertRequestValidator>();
             services.AddTransient<IValidator<StudentUpdateRequest>,StudentUpdateRequestValidator>();
+            services.AddTransient<IValidator<CourseInsertRequest>,CourseInsertRequestValidator>();
         }
     }
 }

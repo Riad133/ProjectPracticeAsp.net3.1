@@ -42,6 +42,7 @@ namespace BLL.Request
             if (string.IsNullOrWhiteSpace(name))
             {
                 return false;
+                
             }
 
             var departmentService = _serviceProvider.GetRequiredService<IDepartmentService>();

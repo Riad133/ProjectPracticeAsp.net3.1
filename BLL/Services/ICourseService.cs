@@ -17,7 +17,9 @@ namespace BLL.Services
         Task<Course> UpdateAsync(string code, CourseInsertRequest request);
         Task<bool> DeleteAsync(string code);
                                                   
-        Task<bool> IsCourseExists(string code);
+       
+        Task<bool> IsCodeExists(string code);
+        Task<bool> IsNameExists(string name);
         
     }
     public  class  CourseService : ICourseService{
@@ -55,7 +57,7 @@ namespace BLL.Services
 
         public async Task<Course> GetACourseAsync(string code)
         {
-            var course =_unitOfWork.CourseRepository.QueryAll().Include(x => x.CourseStudents).FirstOrDefault();
+            var course =await _unitOfWork.CourseRepository.QueryAll().Where(x => x.Code== code).Include(x => x.CourseStudents).FirstOrDefaultAsync();
             if (course == null)
             {
                 throw new MyAppException("No data found");
@@ -71,20 +73,17 @@ namespace BLL.Services
             {
                 throw  new MyAppException("No data found");
             }
-            var course = new Course
-            {
-                Name = request.Name,
-                Code = request.Code
-
-            };
+           
+            acourse.Name = request.Name;
+            acourse.Code = request.Code;
             
-            _unitOfWork.CourseRepository.UpdateAsync(course);
+            _unitOfWork.CourseRepository.UpdateAsync(acourse);
             if (!await _unitOfWork.ApplicationSaveChangesAsync())
             {
                 throw  new MyAppException("Some thing is wrong");
             }
 
-            return course;
+            return acourse;
         }
 
         public Task<bool> DeleteAsync(string code)
@@ -92,9 +91,24 @@ namespace BLL.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> IsCourseExists(string code)
+        public async Task<bool> IsNameExists(string name)
         {
-            throw new System.NotImplementedException();
+            var department  = await _unitOfWork.CourseRepository.GetAAsync(x => x.Name == name);
+            if (department != null)
+            {
+                return true;
+            }
+
+            return true;
+        }
+        public async Task<bool> IsCodeExists(string code)
+        {
+            var department  = await _unitOfWork.CourseRepository.GetAAsync(x => x.Code == code);
+            if (department != null)
+            {
+                return true;
+            }
+            return true;
         }
     }
 }
