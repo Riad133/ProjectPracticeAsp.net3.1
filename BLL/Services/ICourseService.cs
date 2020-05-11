@@ -14,7 +14,7 @@ namespace BLL.Services
         Task<Course> AddCourseAsync(CourseInsertRequest request);
         Task<List<Course>> GetAllCourseAsync();
         Task<Course> GetACourseAsync(string code);
-        Task<Course> UpdateAsync(string code, CourseInsertRequest request);
+        Task<Course> UpdateAsync(string code, CourseUpdateRequest request);
         Task<bool> DeleteAsync(string code);
                                                   
        
@@ -66,14 +66,21 @@ namespace BLL.Services
             return course;
         }
 
-        public async Task<Course> UpdateAsync(string code, CourseInsertRequest request)
+        public async Task<Course> UpdateAsync(string code, CourseUpdateRequest request)
         {
             var acourse = await _unitOfWork.CourseRepository.GetAAsync(x => x.Code== code);
             if (acourse == null)
             {
                 throw  new MyAppException("No data found");
             }
-           
+
+            if (code != request.Code)
+            {
+                if (await IsCodeExists(request.Code))
+                {
+                    throw  new MyAppException("Code already exist");
+                }
+            }
             acourse.Name = request.Name;
             acourse.Code = request.Code;
             
@@ -99,7 +106,7 @@ namespace BLL.Services
                 return true;
             }
 
-            return true;
+            return false;
         }
         public async Task<bool> IsCodeExists(string code)
         {
@@ -108,7 +115,7 @@ namespace BLL.Services
             {
                 return true;
             }
-            return true;
+            return false;
         }
     }
 }

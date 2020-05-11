@@ -33,7 +33,7 @@ namespace API.Controllers
         [HttpPut("{code}")]
         
         
-        public async  Task<ActionResult>UpdateCourse(string code,CourseInsertRequest request)
+        public async  Task<ActionResult>UpdateCourse(string code,CourseUpdateRequest request)
         {
             return Ok(await _courseService.UpdateAsync(code,request));
         } 

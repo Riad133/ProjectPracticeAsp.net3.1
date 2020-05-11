@@ -59,6 +59,7 @@
         </e>
         <e p="Request" t="Include">
           <e p="CourseInsertRequest.cs" t="Include" />
+          <e p="CourseUpdateRequest.cs" t="Include" />
           <e p="DepartmentInsertRequest.cs" t="Include" />
           <e p="LoginRequest.cs" t="Include" />
           <e p="StudentInsertRequest.cs" t="Include" />
