@@ -19,8 +19,8 @@ namespace BLL.Request
         public CourseInsertRequestValidator(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            RuleFor(x => x.Name).NotEmpty().NotNull().MinimumLength(4).MustAsync(NameExist).WithMessage("Name already exist");
-            RuleFor(x => x.Code).NotEmpty().NotNull().MinimumLength(3).MaximumLength(12).MustAsync(CodeExists).WithMessage("Code already exist");
+            RuleFor(x => x.Name).NotEmpty().NotNull().MustAsync(NameExist).WithMessage("Name already exist");
+            RuleFor(x => x.Code).NotEmpty().NotNull().MustAsync(CodeExists).WithMessage("Code already exist");
                  
         }
      

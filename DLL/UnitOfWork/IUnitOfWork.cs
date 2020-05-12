@@ -14,6 +14,7 @@ namespace DLL.UnitOfWork
         IDepartmentRepository DepartmentRepository { get; }
         IStudentRepository StudentRepository { get; }
         ICourseRepository CourseRepository { get; }
+        ICourseStudentEnrollRepository CourseStudentEnrollRepository { get; }
 
             #endregion
         //all repository need to added here end 
@@ -27,6 +28,7 @@ namespace DLL.UnitOfWork
         private IDepartmentRepository _departmentRepository;
         private IStudentRepository _studentRepository;
         private ICourseRepository _courseRepository;
+        private ICourseStudentEnrollRepository _courseStudentEnrollRepository;
 
         public IDepartmentRepository DepartmentRepository =>
             _departmentRepository ??= new DepartmentRepository(_context);
@@ -35,6 +37,8 @@ namespace DLL.UnitOfWork
             _studentRepository ??= new StudentRepository(_context);
         public ICourseRepository CourseRepository => 
             _courseRepository ??= new CourseRepository(_context);
+        public ICourseStudentEnrollRepository CourseStudentEnrollRepository => 
+            _courseStudentEnrollRepository ??= new CourseStudentEnrollRepository(_context);
         
         private readonly ApplicationDbContext _context;
         private bool disposed = false;

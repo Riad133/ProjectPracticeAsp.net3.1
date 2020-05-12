@@ -33,5 +33,6 @@ namespace BLL.Request
             var courseService = _serviceProvider.GetRequiredService<ICourseService>();
             return !await courseService.IsNameExists(name);
         }
+        
     }
 }

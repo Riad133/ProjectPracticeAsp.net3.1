@@ -12,6 +12,7 @@
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
           <e p="CourseController.cs" t="Include" />
+          <e p="CourseEnrollController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="OurApplicationController.cs" t="Include" />
           <e p="StudentController.cs" t="Include" />
@@ -58,6 +59,7 @@
           </e>
         </e>
         <e p="Request" t="Include">
+          <e p="CourseEnrollRequest.cs" t="Include" />
           <e p="CourseInsertRequest.cs" t="Include" />
           <e p="CourseUpdateRequest.cs" t="Include" />
           <e p="DepartmentInsertRequest.cs" t="Include" />
@@ -72,6 +74,7 @@
         </e>
         <e p="Services" t="Include">
           <e p="IAccountService.cs" t="Include" />
+          <e p="ICourseEnrollService.cs" t="Include" />
           <e p="ICourseService.cs" t="Include" />
           <e p="IDepartmentService.cs" t="Include" />
           <e p="IStudentService.cs" t="Include" />
@@ -115,6 +118,7 @@
         </e>
         <e p="Repository" t="Include">
           <e p="ICourseRepository.cs" t="Include" />
+          <e p="ICourseStudentEnrollRepository.cs" t="Include" />
           <e p="IDepartmentRepository.cs" t="Include" />
           <e p="IStudentRepository.cs" t="Include" />
         </e>
