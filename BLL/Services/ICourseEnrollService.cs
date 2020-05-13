@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Request;
@@ -25,13 +26,15 @@ namespace BLL.Services
 
         public async Task<CourseStudent> AddCourseEnrollAsync(CourseEnrollRequest request)
         {
+            Guid id = Guid.NewGuid();
             var studentId =  _unitOfWork.StudentRepository.GetAAsync(x => x.RollNo == request.studentRollNo).Result
                 .StudentId;
             var courseId = _unitOfWork.CourseRepository.GetAAsync(x => x.Code == request.CourseCode).Result.CourseId;
             var courseStudent = new CourseStudent
             {
-                studentId = studentId,
-                courseId =  courseId
+                CourseStudentId= id.ToString(),
+                StudentId = studentId,
+                CourseId =  courseId
             };
           await  _unitOfWork.CourseStudentEnrollRepository.createAsync(courseStudent);
           if (await _unitOfWork.ApplicationSaveChangesAsync())

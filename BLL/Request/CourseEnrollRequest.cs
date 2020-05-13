@@ -20,8 +20,8 @@ namespace BLL.Request
         public CourseEnrollRequestValidator(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            RuleFor(x => x.studentRollNo).NotEmpty().NotNull().MustAsync(RollNoExists).WithMessage("Name already exist");
-            RuleFor(x => x.CourseCode).NotEmpty().NotNull().MustAsync(CodeExists).WithMessage("Code already exist");
+            RuleFor(x => x.studentRollNo).NotEmpty().NotNull().MustAsync(RollNoExists).WithMessage("RollNo not exist");
+            RuleFor(x => x.CourseCode).NotEmpty().NotNull().MustAsync(CodeExists).WithMessage("Code not exist");
 
         }
         
@@ -33,7 +33,7 @@ namespace BLL.Request
             }
 
             var StudentServiceProvider = _serviceProvider.GetRequiredService<IStudentService>();
-            return !await StudentServiceProvider.IsRollNoExists(studentRollNo);
+            return await StudentServiceProvider.IsRollNoExists(studentRollNo);
         }
         private async Task<bool> CodeExists(string code, CancellationToken arg2)
         {
@@ -43,7 +43,7 @@ namespace BLL.Request
             }
      
             var courseService = _serviceProvider.GetRequiredService<ICourseService>();
-            return !await courseService.IsCodeExists(code);
+            return await courseService.IsCodeExists(code);
         }
     }
 }

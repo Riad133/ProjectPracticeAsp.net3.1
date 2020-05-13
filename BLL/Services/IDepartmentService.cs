@@ -54,18 +54,18 @@ namespace BLL.Services
 
         public async Task<List<Department>> GetAllDepartmentAsync()
         {
-            var departments =  _unitOfWork.DepartmentRepository.QueryAll().Include(x => x.Students).ToList();
+            var departments = await _unitOfWork.DepartmentRepository.QueryAll().Include(x => x.Students).ToListAsync();
             if (departments == null)
             {
                 throw new MyAppException("Department not found");
             }
 
-            return departments;
+            return  departments;
         }
 
         public async Task<Department> GetADepartmentAsync(string code)
         {
-            var department =  _unitOfWork.DepartmentRepository.QueryAll().Where(x => x.Code==code).Include(x => x.Students).FirstOrDefault();
+            var department =await  _unitOfWork.DepartmentRepository.QueryAll().Where(x => x.Code==code).Include(x => x.Students).FirstOrDefaultAsync();
             if (department == null)
             {
                 throw new MyAppException("Department not found");

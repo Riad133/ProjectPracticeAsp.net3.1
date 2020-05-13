@@ -1,14 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using DLL.Model.Interfaces;
 
 namespace DLL.Model
 {
     public class CourseStudent:ITrackable,IsoftDelete
     {
-        public int CourseStudentId { get; set; }
-        public int courseId  { get; set; }
+       
+        
+        public string CourseStudentId { get; set; }
+        public int CourseId  { get; set; }
         public Course Course { get; set; }
-        public int studentId { get; set; }
+        public int StudentId { get; set; }
         public Student Student { get; set; }
 
         public DateTimeOffset CreatedAt { get; set; }

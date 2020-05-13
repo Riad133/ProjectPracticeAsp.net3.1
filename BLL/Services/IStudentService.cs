@@ -130,7 +130,7 @@ namespace BLL.Services
 
         public async Task<List<StudentReport>> GetAllStudentDepartmentReportAsync()
         {
-            var allStudent =  _unitOfWork.StudentRepository.QueryAll().Include(x => x.Department).ToList();
+            var allStudent = await _unitOfWork.StudentRepository.QueryAll().Include(x => x.Department).ToListAsync();
 
             if (allStudent == null)
             {

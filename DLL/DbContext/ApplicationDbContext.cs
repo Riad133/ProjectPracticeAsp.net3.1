@@ -37,16 +37,7 @@ namespace DLL.DbContext
                     modelBuilder.Entity(entity.ClrType).HasQueryFilter(GetIsDeletedRestriction(entity.ClrType));
                 }
             }
-            modelBuilder.Entity<CourseStudent>()
-                .HasKey(cs => new { cs.courseId, cs.studentId });  
-            modelBuilder.Entity<CourseStudent>()
-                .HasOne(bc => bc.Course)
-                .WithMany(b => b.CourseStudents)
-                .HasForeignKey(bc => bc.courseId);  
-            modelBuilder.Entity<CourseStudent>()
-                .HasOne(bc => bc.Student)
-                .WithMany(c => c.CourseStudents)
-                .HasForeignKey(bc => bc.studentId);
+            modelBuilder.Entity<CourseStudent>().HasKey(sc => new { sc.StudentId, sc.CourseId });
             base.OnModelCreating(modelBuilder);
         }
         private static LambdaExpression GetIsDeletedRestriction(Type type)

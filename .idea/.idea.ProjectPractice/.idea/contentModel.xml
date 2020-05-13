@@ -92,8 +92,12 @@
         <e p="DLL.csproj" t="IncludeRecursive" />
         <e p="DLLDependency.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200508200535_removeDepartmentStudentClss.cs" t="Include" />
-          <e p="20200508200535_removeDepartmentStudentClss.Designer.cs" t="Include" />
+          <e p="20200513182643_InitialMigration.cs" t="Include" />
+          <e p="20200513182643_InitialMigration.Designer.cs" t="Include" />
+          <e p="20200513190551_addKeyToCoruseEnrollment.cs" t="Include" />
+          <e p="20200513190551_addKeyToCoruseEnrollment.Designer.cs" t="Include" />
+          <e p="20200513191549_modifyCourseEnrollment.cs" t="Include" />
+          <e p="20200513191549_modifyCourseEnrollment.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">

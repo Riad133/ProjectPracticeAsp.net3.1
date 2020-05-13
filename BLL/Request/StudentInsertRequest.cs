@@ -52,7 +52,7 @@ namespace BLL.Request
         }
         private async Task<bool> DepartmentIdNoExists(int DepartmentId, CancellationToken arg2)
         {
-            if (DepartmentId  == null  )
+            if (DepartmentId  ==0 )
             {
                 return false;
             }
