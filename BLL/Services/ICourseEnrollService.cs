@@ -30,6 +30,14 @@ namespace BLL.Services
             var studentId =  _unitOfWork.StudentRepository.GetAAsync(x => x.RollNo == request.studentRollNo).Result
                 .StudentId;
             var courseId = _unitOfWork.CourseRepository.GetAAsync(x => x.Code == request.CourseCode).Result.CourseId;
+          
+            var courseStudentEnroll =
+             await   _unitOfWork.CourseStudentEnrollRepository.GetAAsync(x =>
+                    x.CourseId == courseId && x.StudentId == studentId);
+            if (courseStudentEnroll != null)
+            {
+                throw new MyAppException("Student Already enroll in this course");
+            }
             var courseStudent = new CourseStudent
             {
                 CourseStudentId= id.ToString(),
