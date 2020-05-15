@@ -70,6 +70,7 @@
         <e p="Response" t="Include">
           <e p="LoginResponse.cs" t="Include" />
           <e p="RefreshTokenResponse.cs" t="Include" />
+          <e p="StudentCourseEnrollResponse.cs" t="Include" />
           <e p="StudentReport.cs" t="Include" />
         </e>
         <e p="Services" t="Include">

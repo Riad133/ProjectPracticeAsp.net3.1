@@ -20,5 +20,18 @@ namespace API.Controllers
             return Ok(await _courseEnrollService.AddCourseEnrollAsync(aCourseEnrollRequest));
 
         }
+
+        [HttpGet]
+        [Route("rollNo")]
+        public async Task<ActionResult> StudentEnrollReport(string rollno)
+        {
+            return  Ok(await _courseEnrollService.GetAStudentReport(rollno));
+        }
+        [HttpGet]
+       
+        public async Task<ActionResult> AllStudentEnrollReport()
+        {
+            return  Ok(await _courseEnrollService.GetAllStudentReport());
+        }
     }
 }
