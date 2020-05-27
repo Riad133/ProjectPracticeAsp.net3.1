@@ -88,3 +88,9 @@ F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\DnsClient.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+F:\Programming\Asp.net Taposh Practice\ProjectPractice\API\bin\Debug\netcoreapp3.1\SharpCompress.dll

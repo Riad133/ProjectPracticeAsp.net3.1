@@ -114,6 +114,16 @@
           </e>
           <e p="Student.cs" t="Include" />
         </e>
+        <e p="MongoReport" t="Include">
+          <e p="Model" t="Include">
+            <e p="DepartmentStudentReportMongo.cs" t="Include" />
+          </e>
+          <e p="MongoDbContext.cs" t="Include" />
+          <e p="MongoDbDependency.cs" t="Include" />
+          <e p="Repositories" t="Include">
+            <e p="IDepartmentStudentMongoRepository.cs" t="Include" />
+          </e>
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
