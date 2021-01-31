@@ -215,7 +215,7 @@ namespace BLL.Services
             int maxClm =1;
             PdfPTable pdfPTable= new PdfPTable(maxClm);
             string path = _hostEnvironment.WebRootPath + "/Images";
-            string imgCombine = Path.Combine(path, "test.jpg");
+            string imgCombine = Path.Combine(path, "test1.jpg");
             Image image = Image.GetInstance(imgCombine);
             _pdfPCell= new PdfPCell(image);
             _pdfPCell.Colspan = maxClm;

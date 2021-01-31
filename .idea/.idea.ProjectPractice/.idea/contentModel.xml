@@ -50,6 +50,7 @@
           <e p="Images" t="Include">
             <e p="hello.pdf" t="Include" />
             <e p="test.jpg" t="Include" />
+            <e p="test1.jpg" t="Include" />
           </e>
         </e>
       </e>
