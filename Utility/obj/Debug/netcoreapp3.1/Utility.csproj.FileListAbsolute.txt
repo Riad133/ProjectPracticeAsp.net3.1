@@ -7,3 +7,12 @@ F:\Programming\Asp.net Taposh Practice\ProjectPractice\Utility\obj\Debug\netcore
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.AssemblyInfo.cs
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.dll
 F:\Programming\Asp.net Taposh Practice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.pdb
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\bin\Debug\netcoreapp3.1\Utility.deps.json
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\bin\Debug\netcoreapp3.1\Utility.dll
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\bin\Debug\netcoreapp3.1\Utility.pdb
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.csprojAssemblyReference.cache
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.AssemblyInfoInputs.cache
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.AssemblyInfo.cs
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.CoreCompileInputs.cache
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.dll
+F:\Programming\Asp.netTaposhPractice\ProjectPractice\Utility\obj\Debug\netcoreapp3.1\Utility.pdb

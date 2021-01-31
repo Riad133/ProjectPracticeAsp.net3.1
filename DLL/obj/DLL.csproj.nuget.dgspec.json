@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\DLL\\DLL.csproj": {}
+    "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\DLL\\DLL.csproj": {}
   },
   "projects": {
-    "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\DLL\\DLL.csproj": {
+    "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\DLL\\DLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\DLL\\DLL.csproj",
+        "projectUniqueName": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\DLL\\DLL.csproj",
         "projectName": "DLL",
-        "projectPath": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\DLL\\DLL.csproj",
+        "projectPath": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\DLL\\DLL.csproj",
         "packagesPath": "C:\\Users\\RIAD\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\DLL\\obj\\",
+        "outputPath": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\DLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

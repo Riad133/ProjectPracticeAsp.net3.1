@@ -9,6 +9,8 @@ namespace DLL.MongoReport.Repositories
     {
         Task<DepartmentStudentReportMongo> Create(DepartmentStudentReportMongo departmentStudentReportMongo);
         Task<List<DepartmentStudentReportMongo>> GetAll(DepartmentStudentReportMongo departmentStudentReportMongo);
+        Task<List<DepartmentStudentReportMongo>> GetFilter(string email);
+
     }
     public class DepartmentStudentMongoRepository:IDepartmentStudentMongoRepository
     {
@@ -28,6 +30,14 @@ namespace DLL.MongoReport.Repositories
         {
             var filterBuilder = Builders<DepartmentStudentReportMongo>.Filter;
             var filter = filterBuilder.Empty;
+            var sort = Builders<DepartmentStudentReportMongo>.Sort.Descending("_id");
+            return await _context.DepartmentStudentReport.Find(filter).Sort(sort).ToListAsync();
+        }
+
+        public async Task<List<DepartmentStudentReportMongo>> GetFilter(string email)
+        {
+            var filterBuilder = Builders<DepartmentStudentReportMongo>.Filter;
+            var filter = filterBuilder.ElemMatch(DepartmentStudentReportMongo => DepartmentStudentReportMongo.Roles,Role=> Role.Name==email);
             var sort = Builders<DepartmentStudentReportMongo>.Sort.Descending("_id");
             return await _context.DepartmentStudentReport.Find(filter).Sort(sort).ToListAsync();
         }

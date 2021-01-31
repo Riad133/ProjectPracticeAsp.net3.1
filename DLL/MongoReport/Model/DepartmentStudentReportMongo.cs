@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using System.Collections.Generic;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DLL.MongoReport.Model
@@ -12,6 +13,13 @@ namespace DLL.MongoReport.Model
         public string StudentEmail { get; set; }
         public string DepartmentName { get; set; }
         public string DepartmentCode { get; set; }
+        public List<Role> Roles { get; set; }
         
+    }
+
+    public class Role
+    {
+        public string Name { get; set; }
+        public string ID { get; set; }
     }
 }

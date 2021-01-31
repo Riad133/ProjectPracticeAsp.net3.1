@@ -351,11 +351,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\Utility\\Utility.csproj",
+      "projectUniqueName": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\Utility\\Utility.csproj",
       "projectName": "Utility",
-      "projectPath": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\Utility\\Utility.csproj",
+      "projectPath": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\Utility\\Utility.csproj",
       "packagesPath": "C:\\Users\\RIAD\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\Asp.net Taposh Practice\\ProjectPractice\\Utility\\obj\\",
+      "outputPath": "F:\\Programming\\Asp.netTaposhPractice\\ProjectPractice\\Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -413,7 +413,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
       }
     }
   }
