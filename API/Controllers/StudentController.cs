@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-  
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class StudentController : OurApplicationController
     {
        

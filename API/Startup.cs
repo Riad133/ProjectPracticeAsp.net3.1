@@ -49,6 +49,7 @@ namespace API
             //add for API versioning 
             
             services.AddMvcCore();
+            
             services.AddApiVersioning(config =>
             {
                 // Specify the default API Version as 1.0
@@ -59,6 +60,7 @@ namespace API
             services.AddControllers().AddFluentValidation().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("myDbConnection")));
+            services.AddHttpClient();
             GetAllDependency(services);
             //this part end for API documentation 
            
@@ -119,6 +121,7 @@ namespace API
             }
             //this part start for API documentation 
             app.UseMiddleware<ExceptionMiddleware>();
+            app.UseMiddleware<JWTInHeaderMiddleware>();
             app.UseSwagger();
             
 

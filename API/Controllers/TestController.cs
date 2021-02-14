@@ -60,9 +60,9 @@ namespace API.Controllers
         }
         
         [HttpPost("createUser")]
-        public ActionResult CreateUser()
+        public async Task<IActionResult> CreateUser()
         {
-            _testService.SaveData();
+           await _testService.SaveData();
             return Ok("Hello Mongo");
         }
         

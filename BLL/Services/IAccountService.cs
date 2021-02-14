@@ -123,7 +123,7 @@ namespace BLL.Services
             response.Token= new JwtSecurityTokenHandler().WriteToken(token);
             response.Expire = time * 60;
             response.RefreshToken = resData;
-          await  StoreTokenInformation(userInfo.Id, response.Token, response.RefreshToken);
+          //await  StoreTokenInformation(userInfo.Id, response.Token, response.RefreshToken);
             return response;
 
         }
